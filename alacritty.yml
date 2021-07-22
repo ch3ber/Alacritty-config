@@ -65,7 +65,7 @@ window:
   #   - Windowed
   #   - Maximized
   #   - Fullscreen
-startup_mode: Maximized
+startup_mode: Windowed
 
   # Window class (Linux/BSD only):
   #class:
@@ -92,10 +92,6 @@ startup_mode: Maximized
 font:
   # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (Linux/BSD) monospace
     family: RobotoMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
@@ -103,8 +99,6 @@ font:
 
   # Bold font face
   bold:
-    # Font family
-    #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     family: RobotoMono Nerd Font
@@ -114,8 +108,6 @@ font:
 
   # Italic font face
   italic:
-    # Font family
-    #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     family: RobotoMono Nerd Font
@@ -125,8 +117,6 @@ font:
 
   # Bold italic font face
   bold_italic:
-    # Font family
-    #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     family: RobotoMono Nerd Font
@@ -159,7 +149,7 @@ colors:
   # Default colors
   primary:
     background: '#000000'
-    foreground: '#99ffff'
+    foreground: '#ffffff'
 
     # Bright and dim foreground colors
     #
@@ -247,25 +237,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#001717'
-    red:     '#ff1919'
-    green:   '#00ff00'
-    yellow:  '#ffff4c'
-    blue:    '#00b2b2'
-    magenta: '#ff66ff'
+    black:   '#0b132b'
+    red:     '#dd2c2f'
+    green:   '#86fc8b'
+    yellow:  '#4ea8de'
+    blue:    '#5bc0be'
+    magenta: '#5e60ce'
     cyan:    '#00ffff'
-    white:   '#b2ffff'
+    white:   '#6fffe9'
 
   # Bright colors
   bright:
-    black:   '#002222'
-    red:     '#d54e53'
-    green:   '#32ff32'
-    yellow:  '#ffff66'
-    blue:    '#00e5e5'
-    magenta: '#c397d8'
-    cyan:    '#4cffff'
-    white:   '#ccffff'
+    black:   '#1c243c'
+    red:     '#ee3d3f'
+    green:   '#97fd9c'
+    yellow:  '#5fb9ef'
+    blue:    '#6cd1cf'
+    magenta: '#6f71df'
+    cyan:    '#11ffff'
+    white:   '#7ffffa'
 
   # Dim colors
   #
@@ -336,7 +326,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.7
+background_opacity: 0.87
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -349,8 +339,6 @@ background_opacity: 0.7
 cursor:
   # Cursor style
   style:
-    # Cursor shape
-    #
     # Values for `shape`:
     #   - ▇ Block
     #   - _ Underline
@@ -693,14 +681,16 @@ shell:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
   #- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
-  #- { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp,  }
-  #- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
-  #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
-  #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
+  - { key: U,    mods: Control|Shift,   action: ScrollPageUp,  }
+  - { key: D,  mods: Control|Shift,   action: ScrollPageDown }
+  - { key: T,      mods: Control|Shift,   action: ScrollToTop,   }
+  - { key: B,       mods: Control|Shift,   action: ScrollToBottom }
 
   # Vi Mode
   #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
@@ -771,9 +761,9 @@ key_bindings:
   #- { key: B,              mods: Control|Shift, mode: ~Search,    action: SearchBackward   }
   #- { key: C,              mods: Control|Shift, mode: Vi|~Search, action: ClearSelection   }
   #- { key: Insert,         mods: Shift,                           action: PasteSelection   }
-  #- { key: Key0,           mods: Control,                         action: ResetFontSize    }
+  - { key: Key0,           mods: Control,                         action: ResetFontSize    }
   #- { key: Equals,         mods: Control,                         action: IncreaseFontSize }
   - { key: Plus,           mods: Control,                         action: IncreaseFontSize }
-  - { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
+  #- { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
   - { key: Minus,          mods: Control,                         action: DecreaseFontSize }
-  - { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
+  #- { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
